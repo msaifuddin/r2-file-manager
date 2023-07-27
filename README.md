@@ -21,6 +21,10 @@ The worker handles the following HTTP methods:
 - `PUT`: Uploads a file to the server.
 - `POST`: Receives file data from a form and saves the file.
 
+## Screenshot
+
+<img src="screenshot/ss1.png" alt="main" width="40%"/> <img src="screenshot/ss2.png" alt="upload" width="40%"/> <img src="screenshot/ss3.png" alt="delete" width="40%"/>
+
 ## Deployment
 
 Install the required packages and follow the [Cloudflare tutorials](https://developers.cloudflare.com/workers/tutorials/configure-your-cdn/).

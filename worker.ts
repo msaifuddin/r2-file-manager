@@ -1,7 +1,7 @@
 const HTML_TEMPLATE = `
 <html>
   <head>
-    <title>R2 File Uploader</title>
+    <title>R2 File Manager</title>
     <style>
       body {
         display: flex;

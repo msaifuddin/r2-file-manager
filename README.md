@@ -1,6 +1,6 @@
 # R2 File Manager
 
-R2 File Manager is a simple and lightweight file management system, designed to be used in serverless environments. I created it as I needed a simple way to manage my R2 bucket files, and I couldn't find any existing projects that met my requirements. The example tutorials using curl/put/S3 API didn't work or didn't suit my use-case. I also implemented a file listing method as I couldn't find a working way to do it with any function calls. Maybe there are ways to do this, but I didn't want to waste my time finding it😒.
+The R2 File Manager is coded in JavaScript for use on Cloudflare Workers. It provides an intuitive interface for managing files on Cloudflare R2 Storage. It can be protected by employing Cloudflare Access.
 
 ## Functionality
 
@@ -13,7 +13,7 @@ The system includes the following features:
 
 ## Usage
 
-The system is designed to be run in a serverless environment, with the main functionality being handled by the Cloudflare Worker.
+The system is designed to be run by Cloudflare Workers.
 
 The worker handles the following HTTP methods:
 
@@ -33,8 +33,8 @@ Install the required packages and follow the [Cloudflare tutorials](https://deve
 2. `cd` to the new application directory
 3. `wrangler r2 bucket create <YOUR_BUCKET_NAME>`
 4. `mv wrangler.toml wrangler.toml.bak && echo -e "name = 'YOUR_APPLICATION_NAME'\nmain = 'src/worker.ts'\ncompatibility_date = 'yyyy-mm-dd'\n\n[[r2_buckets]]\nbinding = 'MY_BUCKET'\nbucket_name = '<YOUR_BUCKET_NAME>'" > wrangler.toml`
-5. `mv src/worker.ts worker.ts.bak && > worker.ts`
-6. `vi src/worker.ts` and paste the `worker.js`
+5. `mv src/worker.ts src/worker.ts.bak`
+6. `wget -P src https://raw.githubusercontent.com/msaifuddin/r2-file-manager/main/worker.ts`
 7. `npx wrangler deploy`
 
 ## Caution
